@@ -29,6 +29,8 @@ or later
 winpty docker exec -it daoplayer2 //bin/bash
 ```
 
+For Android see lots of tedious install stuff below.
+
 Note, on windows, won't work on mounted volume (without symlinks), so maybe
 ```
 mkdir build
@@ -106,8 +108,10 @@ export PATH=${PATH}:${ANDROID_HOME}/platform-tools:${ANDROID_TOOLS}/tools
 curl -s "https://get.sdkman.io" | bash
 source "/root/.sdkman/bin/sdkman-init.sh"
 sdk install gradle 4.2
-
 ```
+
+(On Mac Android Studio installs into /Users/XXX/Library/Android/sdk/platform-tools/adb)
+
 
 ## Concept
 
