@@ -64,6 +64,22 @@ And won't work with --no-bin-links over a windows filesystem.
 
 And ionic serve crashes on Alpine Linux due to a stack problem with str-replace recursion.
 
+## Plugins etc
+
+Geolocation (starting W3C)
+```
+ionic cordova plugin add cordova-plugin-geolocation
+npm install --save @ionic-native/geolocation
+
+cp package.json ionic.config.json config.xml ~/work/dao2-app/
+
+```
+
+background-mode ? 
+background-geolocation ?
+autostart ?
+nativeaudio ?
+
 ## Concept
 
 Hybrid app GPS-driven music player, based (in terms of scripting) on [daoplayer](https://github.com/cgreenhalgh/daoplayer).
