@@ -1,6 +1,7 @@
 FROM node:6.11-wheezy
 
 RUN npm install -g cordova ionic
+
 #RUN apk update && apk add git
 #RUN apk update && apk add xvfb libxfont xorg-server chromium
 # to test...
@@ -10,5 +11,8 @@ RUN npm install -g cordova ionic
 
 VOLUME /root/work
 EXPOSE 8100
-# karma testing
-EXPOSE 9876
+#ionic server
+EXPOSE 35729 
+#(live reload) 
+EXPOSE 53703
+# (logger)
