@@ -35,6 +35,10 @@ mkdir build
 cd build
 (cd ~/work/dao2-app; tar cf - * .*) | tar xf -
 ```
+and later
+```
+(cd ~/work/dao2-app; tar cf - src) | tar xf -
+```
 Then
 ```
 npm install 
