@@ -1,4 +1,4 @@
-FROM node:6.11-wheezy
+FROM node:6.11-stretch
 
 RUN npm install -g cordova ionic
 
@@ -8,6 +8,10 @@ RUN npm install -g cordova ionic
 # /usr/bin/Xvfb :99 & #run Xvfb in background
 # export DISPLAY=:99.0 #export the display environment var
 # export CHROME_BIN=chromium-browser
+
+# Android...
+# Java
+RUN apt-get update && apt-get install -y openjdk-8-jdk-headless
 
 VOLUME /root/work
 EXPOSE 8100

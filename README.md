@@ -43,7 +43,11 @@ Then
 ```
 npm install 
 
+
 ionic serve
+
+ionic cordova prepare
+ionic cordova build android
 ```
 
 ## by the by
@@ -73,12 +77,37 @@ npm install --save @ionic-native/geolocation
 
 cp package.json ionic.config.json config.xml ~/work/dao2-app/
 
+ionic cordova platform add android
+
 ```
 
 background-mode ? 
 background-geolocation ?
 autostart ?
 nativeaudio ?
+
+## Android
+
+JDK 8
+
+Android SDK command-line tools:
+https://developer.android.com/studio/index.html
+```
+wget https://dl.google.com/android/repository/sdk-tools-linux-3859397.zip
+apt-get install -y unzip zip
+cd
+mkdir android
+cd android
+unzip /root/work/sdk-tools-linux-3859397.zip
+export ANDROID_HOME=/root/android
+export PATH=${PATH}:${ANDROID_HOME}/tools/bin:$PATH
+sdkmanager 'build-tools;26.0.1' 'platforms;android-26' 'extras;android;m2repository'
+export PATH=${PATH}:${ANDROID_HOME}/platform-tools:${ANDROID_TOOLS}/tools
+curl -s "https://get.sdkman.io" | bash
+source "/root/.sdkman/bin/sdkman-init.sh"
+sdk install gradle 4.2
+
+```
 
 ## Concept
 
