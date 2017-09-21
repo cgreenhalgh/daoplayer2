@@ -24,7 +24,7 @@ cd /root/work/
 
 Again, on windows (here windows <10 => Docker Toolbox) you may need to avoid file path mangling and enable tty:
 ```
-winpty docker run -it --name=daoplayer2  -p 8100:8100 -p 35729:35729 -p 53703:53703 -v /`pwd`:/root/work daoplayer2 //bin/bash
+winpty docker run -it --name=daoplayer2  -p 8100:8100 -p 35729:35729 -p 53703:53703 -v /`pwd`:/root/work daoplayer2
 or later
 winpty docker exec -it daoplayer2 //bin/bash
 ```
@@ -33,6 +33,7 @@ For Android see lots of tedious install stuff below.
 
 Note, on windows, won't work on mounted volume (without symlinks), so maybe
 ```
+cd
 mkdir build
 cd build
 (cd ~/work/dao2-app; tar cf - * .*) | tar xf -

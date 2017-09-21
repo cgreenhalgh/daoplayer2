@@ -12,6 +12,17 @@ RUN npm install -g cordova ionic
 # Android...
 # Java
 RUN apt-get update && apt-get install -y openjdk-8-jdk-headless
+RUN apt-get install -y zip unzip
+# gradle
+RUN curl -s "https://get.sdkman.io" | bash
+# source "/root/.sdkman/bin/sdkman-init.sh"
+RUN /bin/bash -c 'source /root/.sdkman/bin/sdkman-init.sh; sdk install gradle 4.2'
+# android
+RUN mkdir /root/android && cd /root/android && wget https://dl.google.com/android/repository/sdk-tools-linux-3859397.zip && unzip sdk-tools-linux-3859397.zip
+#ENV ANDROID_HOME /root/android
+RUN (echo 'y'; echo '') | /root/android/tools/bin/sdkmanager 'build-tools;26.0.1' 'platforms;android-26' 'extras;android;m2repository'
+RUN echo "export ANDROID_HOME=/root/android" >> ~/.bashrc && echo "export PATH=\${PATH}:/root/android/platform-tools:/root/android/tools:/root/android/tools/bin" >> ~/.bashrc \
+ && sdk use gradle && echo "export PATH=\${PATH}:${GRADLE_HOME}/bin" >> ~/.bashrc
 
 VOLUME /root/work
 EXPOSE 8100
@@ -20,3 +31,5 @@ EXPOSE 35729
 #(live reload) 
 EXPOSE 53703
 # (logger)
+
+ENTRYPOINT [ "/bin/bash" ]
