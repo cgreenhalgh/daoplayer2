@@ -9,6 +9,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { SettingsPage } from '../pages/settings/settings';
 import { LocationService } from './location.service';
+import { AudioService } from './audio.service';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { LocationService } from './location.service';
     SplashScreen,
     Geolocation,
     LocationService, 
+    AudioService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

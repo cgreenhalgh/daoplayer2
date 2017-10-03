@@ -1,0 +1,6 @@
+{
+	"@context":"https://semantic-player.github.io/dymo-core/ontologies/dymo-context.json",
+	"@id":"exampleDymo",
+	"@type":"Dymo",
+	"source":"audio/campus.mp3"
+}

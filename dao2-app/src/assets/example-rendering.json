@@ -1,0 +1,7 @@
+{
+	"@context":"https://semantic-player.github.io/dymo-core/ontologies/dymo-context.json",
+	"@id":"exampleRendering",
+	"@type":"Rendering",
+	"mappings":[
+	]
+}
