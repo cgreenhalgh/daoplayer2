@@ -19,10 +19,12 @@ export class AudioService {
       return;
     }
     // this.audioContext ?
-    this.dm = new DymoManager(undefined, null, null, null, 'assets/audio/impulse_rev.wav');
+    this.dm = new DymoManager(this.audioContext, undefined, undefined, undefined, 'assets/audio/impulse_rev.wav');
+    // Note: post 0.94 api
     this.dm.init('https://semantic-player.github.io/dymo-core/ontologies/')
-    .then(() => this.dm.loadDymoAndRendering('assets/example-dymo.json', 'assets/example-rendering.json'))
-    .then(l => { console.log('Loaded; start playing...', l);
+    .then(() => this.dm.loadIntoStore('assets/dymos/example/dymo.json', 'assets/dymos/example/rendering.json'))
+    .then((res) => {
+      console.log('Loaded; start playing...');
       this.dm.startPlaying();
     }).catch((err) => {
       console.log('Error loading', err);

@@ -24,6 +24,12 @@ RUN (echo 'y'; echo '') | /root/android/tools/bin/sdkmanager 'build-tools;26.0.1
 RUN /bin/bash -c 'echo "export ANDROID_HOME=/root/android" >> ~/.bashrc && echo "export PATH=\${PATH}:/root/android/platform-tools:/root/android/tools:/root/android/tools/bin" >> ~/.bashrc \
  && source /root/.sdkman/bin/sdkman-init.sh; sdk use gradle && echo "export PATH=\${PATH}:${GRADLE_HOME}/bin" >> ~/.bashrc'
 
+# semantic player / dymo-core from source?!
+RUN npm install -g typescript
+# dymo-core dependency 'speaker', build-time dep?
+RUN apt-get install -y libasound2-dev
+RUN apt-get install -y vim
+
 VOLUME /root/work
 EXPOSE 8100
 #ionic server

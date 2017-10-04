@@ -42,6 +42,20 @@ and later
 ```
 (cd ~/work/dao2-app; tar cf - src) | tar xf -
 ```
+
+### Other set-up
+
+(2017-10-04) getting semantic-player/dymo-core from release has different API and using git as source doesn't seem to build correctly.
+Workaround:
+```
+git clone https://github.com/semantic-player/dymo-core.git
+cd dymo-core
+npm install
+tsc
+```
+
+Use that, i.e. 'file:dymo-core' in package.json
+
 Then
 ```
 npm install 

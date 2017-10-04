@@ -1,0 +1,154 @@
+{
+  "@context": "https://semantic-player.github.io/dymo-core/ontologies/dymo-context.json",
+  "@id": "rendering0",
+  "@type": "Rendering",
+  "constraint": [
+    {
+      "@type": "ForAll",
+      "body": {
+        "@type": "ForAll",
+        "body": {
+          "@type": "EqualTo",
+          "directed": {
+            "@type": "xsd:boolean",
+            "@value": "false"
+          },
+          "left": {
+            "@type": "FunctionalTerm",
+            "args": {
+              "@id": "_:b2"
+            },
+            "function": "PlaybackRate"
+          },
+          "right": {
+            "@type": "Subtraction",
+            "left": {
+              "@type": "Constant",
+              "value": {
+                "@type": "xsd:integer",
+                "@value": "1"
+              }
+            },
+            "right": {
+              "@id": "_:b8"
+            }
+          }
+        },
+        "vars": {
+          "@type": "Variable",
+          "varName": "c",
+          "varValue": {
+            "@id": "_:b5"
+          }
+        }
+      },
+      "vars": {
+        "@type": "Variable",
+        "varName": "x",
+        "varType": {
+          "@id": "dy:Dymo"
+        }
+      }
+    },
+    {
+      "@type": "ForAll",
+      "body": {
+        "@type": "ForAll",
+        "body": {
+          "@type": "EqualTo",
+          "directed": {
+            "@type": "xsd:boolean",
+            "@value": "false"
+          },
+          "left": {
+            "@type": "FunctionalTerm",
+            "args": {
+              "@id": "_:b2"
+            },
+            "function": "Amplitude"
+          },
+          "right": {
+            "@id": "_:b8"
+          }
+        },
+        "vars": {
+          "@type": "Variable",
+          "varName": "c",
+          "varValue": {
+            "@id": "_:b5",
+            "@type": "Brownian"
+          }
+        }
+      },
+      "vars": {
+        "@type": "Variable",
+        "varName": "x",
+        "varType": {
+          "@id": "dy:Dymo"
+        }
+      }
+    },
+    {
+      "@type": "ForAll",
+      "body": {
+        "@id": "_:b1",
+        "@type": "ForAll",
+        "body": {
+          "@type": "EqualTo",
+          "directed": {
+            "@type": "xsd:boolean",
+            "@value": "false"
+          },
+          "left": {
+            "@type": "FunctionalTerm",
+            "args": {
+              "@id": "_:b2"
+            },
+            "function": "Amplitude"
+          },
+          "right": {
+            "@id": "_:b8"
+          }
+        },
+        "vars": {
+          "@id": "_:b8",
+          "@type": "Variable",
+          "varName": "c",
+          "varValue": {
+            "@type": "Slider",
+            "name": "Amp"
+          }
+        }
+      },
+      "vars": {
+        "@id": "_:b2",
+        "@type": "Variable",
+        "varName": "x",
+        "varType": {
+          "@id": "dy:Dymo",
+          "@type": "owl:Class",
+          "rdfs:comment": "A Dynamic Music Object is a hierarchical structure of musical objects with modifiable parameters",
+          "rdfs:subClassOf": {
+            "@id": "ch:Constituent"
+          }
+        }
+      }
+    }
+  ],
+  "dymo": {
+    "@id": "dymo0",
+    "@type": "Dymo",
+    "cdt": {
+      "@id": "dy:Conjunction",
+      "@type": "DymoType"
+    },
+    "features": {
+      "@type": "level",
+      "value": {
+        "@type": "xsd:integer",
+        "@value": "0"
+      }
+    },
+    "source": "blib.m4a"
+  }
+}

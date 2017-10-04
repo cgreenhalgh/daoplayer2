@@ -1,0 +1,17 @@
+{
+  "@context": "https://semantic-player.github.io/dymo-core/ontologies/dymo-context.json",
+  "@id": "dymo0",
+  "@type": "Dymo",
+  "cdt": {
+    "@id": "dy:Conjunction",
+    "@type": "DymoType"
+  },
+  "features": {
+    "@type": "level",
+    "value": {
+      "@type": "xsd:integer",
+      "@value": "0"
+    }
+  },
+  "source": "blib.m4a"
+}
