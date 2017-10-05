@@ -31,3 +31,26 @@ Audio
 - diy webaudio
 - [semanticplayer]() / [dymo-core](https://github.com/florianthalmann/dymo-core)
 
+## dymo-core notes
+
+A node has:
+- Amplitude
+- Time Feature, default 0
+- Duration - overides Duration Feature, defaults to buffer length if source
+- DurationRatio - modifies Duration
+- Reverb (unless optimised)
+- Delay (unless optimised)
+- Pan, Height, Distance
+
+A source has:
+- PlaybackRate (default as audio source)
+- TimeStretchRatio (default 0?)
+- Loop (default 0) - just sets low-level loop audio source
+
+Thread repeatedly gets next parts from navigator, builds and plays.
+Default navigator is OneShot.
+Navigator part in cdt (concrete data type?!).
+- conjuction -> lock step parallel
+- disjunction -> random
+- _ -> sequential, depth-first
+
